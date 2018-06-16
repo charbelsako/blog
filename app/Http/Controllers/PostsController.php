@@ -14,8 +14,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        // $posts = Post::orderBy('created_at', 'desc')->take(10)->get();
-        $posts = Post::orderBy('created_at', 'desc')->paginate(1); //easy pagination
+        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -26,7 +25,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -37,7 +36,11 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+        return 123;
     }
 
     /**
