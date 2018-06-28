@@ -18,6 +18,17 @@
             Written on: {{$post->created_at}}
         </small>
         <hr>
-        <a href="/posts/{{$post->id}}/edit" class="btn"> Edit </a>
+        <div class="row">
+            <div class="col s6">
+                <a href="/posts/{{$post->id}}/edit" class="btn"> Edit </a>
+            </div>
+            <div class="col s6">
+                {!! Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'DELETE', 'class' => 'right-align']) !!}
+                    {!! Form::submit('Delete', ['class' => 'btn red ']) !!}
+                {!! Form::close() !!}        
+            </div>
+        </div>
+
+        
     </div>
 @endsection
