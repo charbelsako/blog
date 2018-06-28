@@ -10,11 +10,14 @@
             {{$post->title}}
         </h2>
         <p>
-            {{$post->body}}
+            {{-- the {!! are for parsing html !!} --}}
+            {!! $post->body !!}
         </p>    
         <hr>
         <small>
             Written on: {{$post->created_at}}
         </small>
+        <hr>
+        <a href="/posts/{{$post->id}}/edit" class="btn"> Edit </a>
     </div>
 @endsection
