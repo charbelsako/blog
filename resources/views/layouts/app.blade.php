@@ -24,9 +24,8 @@
                 </a>
                 
 
-                <div class="right">
                     <!-- Right Side Of Navbar -->
-                    <ul class="">
+                    <ul class="right">
                         <li><a class="" href="/">Home</a></li>
                         <li><a class="" href="/about">About</a></li>
                         <li><a class="" href="/services">Services</a></li>
@@ -34,13 +33,13 @@
                     
                     <!-- Authentication Links -->
                     @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </li>
-                @else
+                        <li class="">
+                            <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        <li class="">
+                            <a class="" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @else
                     <li class="nav-item dropdown">
                         <a  class="dropdown-trigger btn" href="#" data-target="dropdown">
                             {{ Auth::user()->name }} <i class="right material-icons">arrow_drop_down</i>
@@ -71,7 +70,7 @@
                     <ul class="center">
                         
                     </ul>
-                </div>
+                
             </div>
         </nav>
 
