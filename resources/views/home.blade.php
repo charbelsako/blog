@@ -1,23 +1,35 @@
 @extends('layouts.app')
 
-@section('content')
+@section('bodyContent')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+   
+    <h1>Your Posts</h1>
+    <div class="row">
+            <a href="/posts/create" class="btn yellow">Create Post</a>
     </div>
+    @if (count($posts) > 0)
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th></th>
+                </tr>
+            </thead>
+        
+            <tbody>
+            @foreach ($posts as $post)
+                <tr>
+                    <td>{{$post->title}}</td>
+                    <td><a href="/posts/{{$post->id}}/edit" class="btn blue">Edit</a></td>
+                    
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    @else
+        <p>You have no posts.</p>
+    @endif
+        
 </div>
 @endsection
