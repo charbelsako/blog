@@ -1,8 +1,5 @@
 @extends('layouts.app')
-@section('style')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-@endsection
+
 @section('bodyContent')
     <br>
     <a href="/posts" class="btn-small waves-effect waves-light">
@@ -23,11 +20,11 @@
         <hr>
         <div class="row">
             <div class="col s6">
-                <a href="/posts/{{$post->id}}/edit" class="btn"> Edit </a>
+                <a href="/posts/{{$post->id}}/edit" class="btn btn-success"> Edit </a>
             </div>
-            <div class="col s6">
+            <div class="">
                 {!! Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'DELETE', 'class' => 'right-align']) !!}
-                    {!! Form::submit('Delete', ['class' => 'btn red ']) !!}
+                    {!! Form::submit('Delete', ['class' => 'btn btn-primary']) !!}
                 {!! Form::close() !!}        
             </div>
         </div>
