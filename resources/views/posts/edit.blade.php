@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('style')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+@endsection
 @section('bodyContent')
     <h1>Edit Post</h1>
     {!! Form::open(['action' => ['PostsController@update', $post->id], 'method' => 'put']) !!}
