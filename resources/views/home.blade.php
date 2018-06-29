@@ -18,13 +18,13 @@
             </thead>
         
             <tbody>
-            @foreach ($posts as $post)
-                <tr>
-                    <td>{{$post->title}}</td>
-                    <td><a href="/posts/{{$post->id}}/edit" class="btn blue">Edit</a></td>
-                    
-                </tr>
-            @endforeach
+                @foreach ($posts as $post)
+                    <tr>
+                        <td>{{$post->title}}</td>
+                        <td><a href="/posts/{{$post->id}}/edit" class="btn blue">Edit</a></td>
+                        
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     @else
